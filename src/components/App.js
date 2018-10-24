@@ -1,13 +1,14 @@
 import React from "react";
-import competenceData from "../data/competences.json";
 import Competence from "./Competence.js";
+import CompetenceDataClient from "./../utils/CompetenceDataClient";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            competenceStep: 0,
+            competenceId: 0,
             indicatorStep: 0,
+            showSummary: false,
             userAnswers: []
         };
         this.showCompetence         = this.showCompetence.bind(this);
@@ -20,55 +21,44 @@ class App extends React.Component {
             showSummary = false;
         }
 
-        let step = 0;
-        let indicatorStep = 0;
-        for(let key in competenceData) {
-            if(competenceData.hasOwnProperty(key) && competenceData[key].id === id) {
-                step = key;
-                if (showSummary) {
-                    indicatorStep = competenceData[key].indicators.length;
-                }
-            }
-        }
-        this.setState({competenceStep: step, indicatorStep:indicatorStep});
+        this.setState({competenceId: id, showSummary: showSummary, indicatorStep:0});
 
     }
 
     setIndicatorStep(indicatorStep) {
         if (indicatorStep >= 0) {
-            this.setState({indicatorStep: indicatorStep});
+            // fallback, in case user tries to access non existing indicator step, show summary view
+            let showSummary = indicatorStep >= CompetenceDataClient.getIndicatorsCountForCompetenceWithId(this.state.competenceId);
+            this.setState({indicatorStep: indicatorStep, showSummary:showSummary});
         }
     }
 
     saveIndicatorAnswer(indicatorId, indicatorAnswer) {
         let updatedUserAnswers = this.state.userAnswers;
-        let competence = competenceData[this.state.competenceStep];
-        if (!updatedUserAnswers.hasOwnProperty(competence.id)) {
-            updatedUserAnswers[competence.id] = [];
+        if (!updatedUserAnswers.hasOwnProperty(this.state.competenceId)) {
+            updatedUserAnswers[this.state.competenceId] = [];
         }
-        updatedUserAnswers[competence.id][indicatorId] = indicatorAnswer;
+        updatedUserAnswers[this.state.competenceId][indicatorId] = indicatorAnswer;
 
         this.setState({userAnswers: updatedUserAnswers});
     }
 
     render() {
-        let competence = competenceData[this.state.competenceStep];
+        let competence = CompetenceDataClient.getCompetenceById(this.state.competenceId);
         let selection = this.state.userAnswers.hasOwnProperty(competence.id)
             ? this.state.userAnswers[competence.id]
             : [];
-        let showSummary = this.state.indicatorStep >= competenceData[this.state.competenceStep]['indicators'].length;
 
         return (
             <div>
                 <h1>Self-assessment tool <small>for Master Digital Design courses</small></h1>
                 <ul>
-                {competenceData.map((c, i) =>
+                {CompetenceDataClient.getListOfCompetences().map((description, id) =>
                     <li>
-                        <a onClick={this.showCompetence.bind(this, c.id, true)}>{c.competenceDescription}</a>
+                        <a onClick={this.showCompetence.bind(this, id, true)}>{description}</a>
                     </li>
                 )}
                 </ul>
-
 
                 <Competence saveIndicatorAnswer={this.saveIndicatorAnswer}
                             competence={competence.competenceDescription}
@@ -76,7 +66,7 @@ class App extends React.Component {
                             indicatorStep={this.state.indicatorStep}
                             setIndicatorStep={this.setIndicatorStep}
                             levelSelections={selection}
-                            showSummary={showSummary}/>
+                            showSummary={this.state.showSummary}/>
             </div>
         )
     }
