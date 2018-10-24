@@ -1,0 +1,54 @@
+[
+  {
+    "id":0,
+    "competenceDescription": "Framing & Strategizing",
+    "indicators": [
+      {
+        "id":0,
+        "description": "Student applies scientific references (e.g. books, scientific papers, ...) to explain her design choices",
+        "levels": [
+          {"grade":0, "description": "The references are not from relevant scientific literature, or they do not explain the student’s design decisions."},
+          {"grade":1, "description": "The student applies few relevant references. A rationale for the choice is provided, but is not fully convincing."},
+          {"grade":2, "description": "The student applies relevant references and can explain why he/she chose them. The references clearly support the proposed design."},
+          {"grade":3, "description": "The student applies relevant references and can explain why he/she chose them. The references clearly support the proposed design. The student shows a clear personal interest in what he/she discusses, and goes beyond what would have been necessary for his/her design."}
+        ]
+      },
+      {
+        "id":1,
+        "description":"The student explains how he/she considered all stakeholders specified in a design brief.",
+        "levels": [
+          {"grade":0, "description": "The student is not able to analyze and explain how a simplified design challenge was completed."},
+          {"grade":1, "description": "The student can analyze and explain how a simplified design challenge was completed. However, some of the stakeholders specified in the brief are not satisfyingly considered in this explanation."},
+          {"grade":2, "description": "The student can analyze and explain how a simplified design challenge was completed for all stakeholders specified in the brief."},
+          {"grade":3, "description": "The student can analyze and explain how a simplified design challenge was completed for all stakeholders specified in the brief. He/she also presents a plan of how the project might be extended beyond the project brief."}
+        ]
+      }
+    ]
+  },
+  {
+    "id":1,
+    "competenceDescription": "New",
+    "indicators": [
+      {
+        "id":2,
+        "description": "NewInd",
+        "levels": [
+          {"grade":0, "description": "a"},
+          {"grade":1, "description": "b"},
+          {"grade":2, "description": "c"},
+          {"grade":3, "description": "d"}
+        ]
+      },
+      {
+        "id":3,
+        "description":"New Ind 2.",
+        "levels": [
+          {"grade":0, "description": "e"},
+          {"grade":1, "description": "f"},
+          {"grade":2, "description": "g"},
+          {"grade":3, "description": "h"}
+        ]
+      }
+    ]
+  }
+]
