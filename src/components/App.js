@@ -1,5 +1,5 @@
 import React from "react";
-import competenceData from "./competences.json";
+import competenceData from "../data/competences.json";
 import Competence from "./Competence.js";
 
 class App extends React.Component {
