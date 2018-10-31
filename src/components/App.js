@@ -22,7 +22,6 @@ class App extends React.Component {
         }
 
         this.setState({competenceId: id, showSummary: showSummary, indicatorStep:0});
-
     }
 
     setIndicatorStep(indicatorStep) {

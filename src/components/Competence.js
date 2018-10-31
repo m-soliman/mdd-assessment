@@ -1,6 +1,6 @@
 import React from "react";
 import Indicator from "./Indicator";
-import ProgressBar from "./ProgressBar";
+import CompetenceStatusBar from "./CompetenceStatusBar";
 import CompetenceSummary from "./CompetenceSummary";
 
 class Competence extends React.Component {
@@ -29,7 +29,8 @@ class Competence extends React.Component {
         return (
             <div>
                 <h2>Competence: {this.props.competence}</h2>
-                    <ProgressBar current={indicatorStep} max={this.props.indicators.length}/>
+                <i>Todo: When selecting an indicator, use colours to show levels weak to strong</i>
+                    <CompetenceStatusBar current={indicatorStep} max={this.props.indicators.length}/>
 
                     {this.props.showSummary ?
                         this.renderSummary() :

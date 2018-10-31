@@ -1,6 +1,6 @@
 import React from "react";
 
-class ProgressBar extends React.Component {
+class CompetenceStatusBar extends React.Component {
     render() {
         let progressPercentage = ((this.props.current) / this.props.max) * 100;
         return (
@@ -15,4 +15,4 @@ class ProgressBar extends React.Component {
     }
 }
 
-export default ProgressBar;
+export default CompetenceStatusBar;
