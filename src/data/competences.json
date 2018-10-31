@@ -1,52 +1,448 @@
 [
   {
-    "id":0,
+    "id": 0,
     "competenceDescription": "Framing & Strategizing",
     "indicators": [
       {
-        "id":0,
+        "id": 0,
         "description": "Student applies scientific references (e.g. books, scientific papers, ...) to explain her design choices",
         "levels": [
-          {"grade":0, "description": "The references are not from relevant scientific literature, or they do not explain the student’s design decisions."},
-          {"grade":1, "description": "The student applies few relevant references. A rationale for the choice is provided, but is not fully convincing."},
-          {"grade":2, "description": "The student applies relevant references and can explain why he/she chose them. The references clearly support the proposed design."},
-          {"grade":3, "description": "The student applies relevant references and can explain why he/she chose them. The references clearly support the proposed design. The student shows a clear personal interest in what he/she discusses, and goes beyond what would have been necessary for his/her design."}
+          {
+            "grade": 0,
+            "description": "The references are not from relevant scientific literature, or they do not explain the student’s design decisions."
+          },
+          {
+            "grade": 1,
+            "description": "The student applies few relevant references. A rationale for the choice is provided, but is not fully convincing."
+          },
+          {
+            "grade": 2,
+            "description": "The student applies relevant references and can explain why he/she chose them. The references clearly support the proposed design."
+          },
+          {
+            "grade": 3,
+            "description": "The student applies relevant references and can explain why he/she chose them. The references clearly support the proposed design. The student shows a clear personal interest in what he/she discusses, and goes beyond what would have been necessary for his/her design."
+          }
         ]
       },
       {
-        "id":1,
-        "description":"The student explains how he/she considered all stakeholders specified in a design brief.",
+        "id": 1,
+        "description": "The student explains how he/she considered all stakeholders specified in a design brief.",
         "levels": [
-          {"grade":0, "description": "The student is not able to analyze and explain how a simplified design challenge was completed."},
-          {"grade":1, "description": "The student can analyze and explain how a simplified design challenge was completed. However, some of the stakeholders specified in the brief are not satisfyingly considered in this explanation."},
-          {"grade":2, "description": "The student can analyze and explain how a simplified design challenge was completed for all stakeholders specified in the brief."},
-          {"grade":3, "description": "The student can analyze and explain how a simplified design challenge was completed for all stakeholders specified in the brief. He/she also presents a plan of how the project might be extended beyond the project brief."}
+          {
+            "grade": 0,
+            "description": "The student is not able to analyze and explain how a simplified design challenge was completed."
+          },
+          {
+            "grade": 1,
+            "description": "The student can analyze and explain how a simplified design challenge was completed. However, some of the stakeholders specified in the brief are not satisfyingly considered in this explanation."
+          },
+          {
+            "grade": 2,
+            "description": "The student can analyze and explain how a simplified design challenge was completed for all stakeholders specified in the brief."
+          },
+          {
+            "grade": 3,
+            "description": "The student can analyze and explain how a simplified design challenge was completed for all stakeholders specified in the brief. He/she also presents a plan of how the project might be extended beyond the project brief."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "description": "The student relates his/her design decisions to user research.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot relate his/her design decisions with user research."
+          },
+          {
+            "grade": 1,
+            "description": "The student explains his/her design decisions in relation to user research, but this is principally desk-based (e.g. no in-person interaction with users)."
+          },
+          {
+            "grade": 2,
+            "description": "The student explains his/her design decisions in relation to user research that includes both some desk-based activities (e.g. literature review) and some field activities (e.g. interviews, on-site observation, shadowing…)."
+          },
+          {
+            "grade": 3,
+            "description": "The student explains his/her design decisions in relation to user research that includes both desk and field activities. The student shows a clear personal interest in what he/she discusses, and goes beyond what would have been necessary for his/her design."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "description": "The student relates his/her design decisions to technical considerations.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student is not able to relate his/her design decisions to technical considerations."
+          },
+          {
+            "grade": 1,
+            "description": "The student can relate his/her design decisions to technical considerations. However, the decision is not optimal within the scope of the project (e.g. the student might have considered different technological solutions)"
+          },
+          {
+            "grade": 2,
+            "description": "The student can relate his/her design decisions to technical considerations that are grounded in relevant, recent developments in digital technologies."
+          },
+          {
+            "grade": 3,
+            "description": "The student can relate his/her design decisions to technical considerations that are grounded in relevant, recent developments in digital technologies. The student shows a clear personal interest in what he/she discusses, and goes beyond what would have been necessary for his/her design."
+          }
         ]
       }
     ]
   },
   {
-    "id":1,
-    "competenceDescription": "New",
+    "id": 1,
+    "competenceDescription": "Reflection & Awareness",
     "indicators": [
       {
-        "id":2,
-        "description": "NewInd",
+        "id": 4,
+        "description": "The student identifies relevant economic, social, and technological trends that shape his/her work.",
         "levels": [
-          {"grade":0, "description": "a"},
-          {"grade":1, "description": "b"},
-          {"grade":2, "description": "c"},
-          {"grade":3, "description": "d"}
+          {
+            "grade": 0,
+            "description": "The student cannot situate his/her work in the socio-cultural context or current news about digital technologies"
+          },
+          {
+            "grade": 1,
+            "description": "The student describes some economic, social, and technological trends that are somehow related to his/her work. "
+          },
+          {
+            "grade": 2,
+            "description": "The student describes the relevant economic, social, and technological trends that shape his/her work. He/she can reflect critically on whether his/her work reinforces those trends, or is opposed to them."
+          },
+          {
+            "grade": 3,
+            "description": "The student describes the relevant economic, social, and technological trends that have an effect on his/her work. He/she expresses a reasoned personal opinion on them, and is eloquent in reflecting critically on whether his/her work reinforces those trends, or is opposed to them."
+          }
         ]
       },
       {
-        "id":3,
-        "description":"New Ind 2.",
+        "id": 5,
+        "description": "The student reflects upon his/her individual contributions to a team.",
         "levels": [
-          {"grade":0, "description": "e"},
-          {"grade":1, "description": "f"},
-          {"grade":2, "description": "g"},
-          {"grade":3, "description": "h"}
+          {
+            "grade": 0,
+            "description": "The student cannot provide a synthetic description of his/her role and his/her relevance in a team."
+          },
+          {
+            "grade": 1,
+            "description": "The student describes his/her role in a team for multiple design cases."
+          },
+          {
+            "grade": 2,
+            "description": "The student describes his/her role in a team for multiple design cases. He/she provides a reflective critique of that role, and identifies what could be improved."
+          },
+          {
+            "grade": 3,
+            "description": "The student describes his/her role in a team for multiple design cases. He/she provides a reflective critique of that role, and identifies what could be improved. The student is aware of team dynamics and can identify what should the team do to improve."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "description": "The student can articulate his/her professional vision in terms of values, ethics and attitude.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student is not able to articulate his/her professional vision in terms of values, ethics and attitude."
+          },
+          {
+            "grade": 1,
+            "description": "The student mentions elements of his/her ethics and values in design, but is not able to synthesize them in his/her own coherent professional vision.  "
+          },
+          {
+            "grade": 2,
+            "description": "The student can articulate his/her professional vision in terms of values, ethics and attitude."
+          },
+          {
+            "grade": 3,
+            "description": "The student can articulate his/her professional vision in terms of values, ethics and attitude. The student is also eloquent in connecting his/her professional vision to concrete examples in the real world, either positive or negative."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "description": "The student can critique a design artifact.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot critique a design artifact"
+          },
+          {
+            "grade": 1,
+            "description": "The student can critique a design artifact. However, the critique is not satisfyingly connected to the socio-cultural context of the artifact."
+          },
+          {
+            "grade": 2,
+            "description": "The student can critique a design artifact, also considering its socio-cultural context."
+          },
+          {
+            "grade": 3,
+            "description": "The student can critique a design artifact, also considering its socio-cultural context. The student is also eloquent in relating the critique to his/her own practice (e.g. identifying inspiring elements, highlighting similarities or differences with his/her work…)"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "description": "The student can critically self-assess the outcomes of his/her work (e.g. deliverables, artifacts..) in a way that leads to practical plans for further improvement.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot self-assess the outcomes of his/her in a way that leads to plans for further improvement."
+          },
+          {
+            "grade": 1,
+            "description": "In the context of a simplified design challenge, the student critically self-assesses the outcomes of his/her work. The student can point at a general direction for improvement, but the plan is vague."
+          },
+          {
+            "grade": 2,
+            "description": "In the context of a simplified design challenge, the student critically self-assesses the outcomes of his/her work in a way that leads to practical plans for further improvement."
+          },
+          {
+            "grade": 3,
+            "description": "In the context of a simplified design challenge, the student critically self-assesses the outcomes of his/her work in a way that leads to practical plans for further improvement. The student is also eloquent in explaining the strong and weak points of his/her work, and clearly connects this explanation to his/her plans for improvement."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "competenceDescription": "Concepting & Ideation",
+    "indicators": [
+      {
+        "id": 9,
+        "description": "The student explains the iterative process of concepting and research that he/she followed.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot satisfyingly explain an iterative process of concepting and research"
+          },
+          {
+            "grade": 1,
+            "description": "The student can explain the iterative process of concepting and research that he/she followed. However, only one concept is presented."
+          },
+          {
+            "grade": 2,
+            "description": "The student can explain the iterative process of concepting and research that he/she followed. The student presents one main concepts and other secondary ones."
+          },
+          {
+            "grade": 3,
+            "description": "The student can explain the iterative process of concepting and research that he/she followed. The student presents one main concepts and other secondary ones. The student reflects critically on his/her choices in developing or discarding certain concepts."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "description": "The student explains how his/her own process has improved over time.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot show an improvement in process"
+          },
+          {
+            "grade": 1,
+            "description": "Considering examples from his/her own work, the student shows and explains an improvement in his/her own process. However, critical reflection is lacking"
+          },
+          {
+            "grade": 2,
+            "description": "Considering examples from his/her own work, the student shows and explains an improvement in his/her own process, and reflects critically on his/her own progress so far."
+          },
+          {
+            "grade": 3,
+            "description": "Considering examples from his/her own work, the student shows and explains an improvement in his/her own process, and reflects critically on his/her own progress so far. The student also identifies elements to improve, and outlines a plan to do so."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "description": "The student provides a rationale for selecting a certain concept over others that he/she developed.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot satisfyingly explain a rationale for selecting a specific concept."
+          },
+          {
+            "grade": 1,
+            "description": "The student can explain the rationale for selecting a specific concept. However, the choice seems somehow trivial (e.g. the discarded concepts are clearly weaker…)"
+          },
+          {
+            "grade": 2,
+            "description": "The student can explain the rationale for selecting a specific concept. The discarded concepts are also well explained, and the student can make an argument for his/her choice."
+          },
+          {
+            "grade": 3,
+            "description": "The student can explain the rationale for selecting a specific concept. The discarded concepts are also well explained, and the student can make an argument for his/her choice. The student can reflect critically on his/her choices."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "competenceDescription": "Creating & Crafting",
+    "indicators": [
+      {
+        "id": 12,
+        "description": "The student explains the technical choices involved in the execution of his/her work.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student explains his/her choices but provides superficial reasoning, resorts to unchallenging defaults or is unaware of alternatives. The student shows no process."
+          },
+          {
+            "grade": 1,
+            "description": "The student explains his/her choices and provides satisfactory reasoning, is somewhat aware of alternatives."
+          },
+          {
+            "grade": 2,
+            "description": "The student explains his/her choices and provides good reasoning, is well aware of alternatives and has a demonstrable process where he/she can suggest other possible executions of the work."
+          },
+          {
+            "grade": 3,
+            "description": "The student presents a well researched process with various trials in her process, and is capable of discerning the best execution. The student shows commitment to go beyond what is necessary."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "description": "The student discusses the influence of making in the design process.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student presents a haphazard approach to making, or shows no interest at all in prototyping his/her work, going no further than the concepting stage."
+          },
+          {
+            "grade": 1,
+            "description": "The student presents executions of the work that are lacking in engagement with the material or technology used. He/she doesn’t seem to derive any design insights from the execution of the work."
+          },
+          {
+            "grade": 2,
+            "description": "The student demonstrates good making skills, carries out designs with attention to detail in the craft involved. Discerns good from bad approaches to making something and derives insights from the making process that help fine-tuning her designs."
+          },
+          {
+            "grade": 3,
+            "description": "The student presents a well researched process with various trials in his/her process, and is capable of discerning the best execution. The student shows commitment to go beyond what is necessary."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "description": "The student shows an open process with multiple intermediary steps, each executed in a way that gives some degree of coherence to said process.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student presents an opaque process, it is difficult for the assessor to determine how the student arrived at certain conclusions. The process is incongruous."
+          },
+          {
+            "grade": 1,
+            "description": "The student presents a semblance of a process with some documentation and some intermediary steps, but it is not clear to an external assessor or client to determine how conclusions were drawn from that evidence."
+          },
+          {
+            "grade": 2,
+            "description": "The student present a solid process involving various iterations, trials and errors, presenting abundant evidence. The process is well documented and communicates with clarity how the work evolved."
+          },
+          {
+            "grade": 3,
+            "description": "The student presents outstanding process documentation that transmits confidence in the students process. It is clear to clients and assessors how the student operates as a designer."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "description": "The student shows awareness of aesthetic trends, technical and design conventions.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student presents a subpar product. The decision making process is decoupled from the problem domain, doesn’t seem to know what’s out there and how other professionals have addressed similar challenges before."
+          },
+          {
+            "grade": 1,
+            "description": "The student presents awareness of what is out there, and how similar challenges have been addressed before. Understands conventions, trends and current techniques but doesn’t really apply them."
+          },
+          {
+            "grade": 2,
+            "description": "The student demonstrates solid understanding of the problem domain and uses the conventions of his/her trade and applies them where relevant."
+          },
+          {
+            "grade": 3,
+            "description": "The student demonstrates command of the techniques and conventions of his/her trade, can apply them where suitable and can break away from them, and innovate when the existing conventions do not suit his/her style."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "competenceDescription": "Self-Directed Learning",
+    "indicators": [
+      {
+        "id": 16,
+        "description": "The student describes his/her participation in communities of practitioners.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student does not participate in communities of practitioners."
+          },
+          {
+            "grade": 1,
+            "description": "The student describes his/her participation in communities of practitioners."
+          },
+          {
+            "grade": 2,
+            "description": "The student describes his/her participation in communities of practitioners. Shares his/her work to his/her peers, solicits feedback, and describes the input that he/she received from members of the community."
+          },
+          {
+            "grade": 3,
+            "description": "The student describes his/her participation in communities of practitioners. Shares his/her work to his/her peers, solicits feedback, and describes the input that he/she received from members of the community. The student takes an active role in a community (e.g. not only attending meetings and receiving feedback, but also organizing, leading, moderating…)."
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "description": "The student reflects on his/her progress towards specific learning goals.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot articulate his/her learning goals"
+          },
+          {
+            "grade": 1,
+            "description": "The student reflects on the learning goals he/she achieved, and on the process leading there. However, the student struggles to put them in a broader perspective and to formulate his/her next logical goals for the near future."
+          },
+          {
+            "grade": 2,
+            "description": "The student reflects on the learning goals he/she achieved, and on the process leading there. The student autonomously formulates learning goals for the near future, and discusses his/her motivation."
+          },
+          {
+            "grade": 3,
+            "description": "The student reflects on the learning goals he/she achieved, and on the process leading there. The student autonomously formulates learning goals for the near future, discusses his/her motivation, and is particularly pragmatic in providing a realistic plan to reach those goals."
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "description": "The student provides examples of cooperation within a team.",
+        "levels": [
+          {
+            "grade": 0,
+            "description": "The student cannot articulate his/her role, relevance and added value in team of designers. If there were issues within the team, the student has not made a concrete attempt to resolve them."
+          },
+          {
+            "grade": 1,
+            "description": "The student provides examples of teamwork. If there were issues within the team, the student explains the steps taken to resolve them. However, critical reflection on the student’s role and contribution in relation to various teammates is lacking. "
+          },
+          {
+            "grade": 2,
+            "description": "The student provides examples of teamwork. If there were issues within the team, the student explains the steps taken to resolve them. The student discusses constructively similarities & differences between himself/herself and colleagues."
+          },
+          {
+            "grade": 3,
+            "description": "The student provides examples of teamwork. The student presents significant examples of team cooperation and, if necessary, conflict resolution. The student discusses constructively similarities & differences between himself/herself and colleagues. The student explains how his/her professional attitude evolved to cooperate better with colleagues."
+          }
         ]
       }
     ]
