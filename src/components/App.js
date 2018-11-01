@@ -1,19 +1,30 @@
 import React from "react";
 import Competence from "./Competence.js";
 import CompetenceDataClient from "./../utils/CompetenceDataClient";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+const cookieName = 'mdd-assessment-answers';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+
+        let userAnswers = {};
+        let content = cookies.get(cookieName);
+        if (content !== undefined && content !== null) {
+            userAnswers = content;
+        }
+
         this.state = {
             competenceId: 0,
             indicatorStep: 0,
             showSummary: false,
-            userAnswers: []
+            userAnswers: userAnswers
         };
         this.showCompetence         = this.showCompetence.bind(this);
         this.saveIndicatorAnswer    = this.saveIndicatorAnswer.bind(this);
         this.setIndicatorStep       = this.setIndicatorStep.bind(this);
+        this.deleteCookieData       = this.deleteCookieData.bind(this);
     }
 
     showCompetence(id, showSummary) {
@@ -34,12 +45,20 @@ class App extends React.Component {
 
     saveIndicatorAnswer(indicatorId, indicatorAnswer) {
         let updatedUserAnswers = this.state.userAnswers;
-        if (!updatedUserAnswers.hasOwnProperty(this.state.competenceId)) {
-            updatedUserAnswers[this.state.competenceId] = [];
+        if (!updatedUserAnswers.hasOwnProperty(this.state.competenceId)
+            || updatedUserAnswers[this.state.competenceId] === null) {
+            updatedUserAnswers[this.state.competenceId] = {};
         }
         updatedUserAnswers[this.state.competenceId][indicatorId] = indicatorAnswer;
 
+        cookies.set(cookieName, updatedUserAnswers);
         this.setState({userAnswers: updatedUserAnswers});
+    }
+
+    deleteCookieData() {
+        cookies.remove(cookieName);
+        this.setState({userAnswers: {}});
+        window.location.reload(true);
     }
 
     render() {
@@ -58,6 +77,7 @@ class App extends React.Component {
                     </li>
                 )}
                 </ul>
+                <button onClick={this.deleteCookieData}>Clear all answers</button>
 
                 <Competence saveIndicatorAnswer={this.saveIndicatorAnswer}
                             competence={competence.competenceDescription}

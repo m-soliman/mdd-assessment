@@ -25,6 +25,7 @@ class Competence extends React.Component {
 
         let indicatorStep = this.props.indicatorStep;
         let indicator = this.props.indicators[indicatorStep];
+        let selectedLevel = this.props.levelSelections !== null ? this.props.levelSelections[indicator.id] : null;
 
         return (
             <div>
@@ -42,11 +43,11 @@ class Competence extends React.Component {
                                 description={indicator.description}
                                 levels={indicator.levels}
                                 select={this.select}
-                                selectedLevel={this.props.levelSelections[indicator.id]}
+                                selectedLevel={selectedLevel}
                             />
 
                             <button disabled={indicatorStep === 0} onClick={this.props.setIndicatorStep.bind(this, indicatorStep-1)}>Previous please</button>
-                            <button disabled={this.props.levelSelections[indicator.id] == null} onClick={this.props.setIndicatorStep.bind(this, indicatorStep+1)}>Next please</button>
+                            <button disabled={selectedLevel === null} onClick={this.props.setIndicatorStep.bind(this, indicatorStep+1)}>Next please</button>
 
                         </div>
                     }

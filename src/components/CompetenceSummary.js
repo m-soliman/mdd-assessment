@@ -12,7 +12,7 @@ class CompetenceSummary extends React.Component {
                     (<div>
                         <h4>{indicator.description}</h4>
                         <a onClick={this.props.showIndicator.bind(this, i)}>
-                            {this.props.levelSelections.hasOwnProperty(indicator.id)
+                            {this.props.levelSelections !== null && this.props.levelSelections.hasOwnProperty(indicator.id)
                                 ? indicator.levels[this.props.levelSelections[indicator.id]].description
                                 : 'give answer'
                             }</a>
