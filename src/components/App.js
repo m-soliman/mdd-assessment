@@ -1,19 +1,13 @@
 import React from "react";
 import Competence from "./Competence.js";
 import CompetenceDataClient from "./../utils/CompetenceDataClient";
-import Cookies from 'universal-cookie';
-const cookies = new Cookies();
-const cookieName = 'mdd-assessment-answers';
+import UserDataClient from "../utils/UserDataClient";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
-        let userAnswers = {};
-        let content = cookies.get(cookieName);
-        if (content !== undefined && content !== null) {
-            userAnswers = content;
-        }
+        let userAnswers = UserDataClient.getUserAnswers();
 
         this.state = {
             competenceId: 0,
@@ -51,12 +45,12 @@ class App extends React.Component {
         }
         updatedUserAnswers[this.state.competenceId][indicatorId] = indicatorAnswer;
 
-        cookies.set(cookieName, updatedUserAnswers);
+        UserDataClient.saveUserAnswers(updatedUserAnswers);
         this.setState({userAnswers: updatedUserAnswers});
     }
 
     deleteCookieData() {
-        cookies.remove(cookieName);
+        UserDataClient.deleteUserAnswers();
         this.setState({userAnswers: {}});
         window.location.reload(true);
     }
