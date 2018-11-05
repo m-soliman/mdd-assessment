@@ -18,7 +18,9 @@ class IndicatorNotes extends React.Component {
     }
 
     addNote() {
-        let notes = [...this.state.notes, this.state.textareaValue];
+        let newNote = this.state.textareaValue;
+        let notes = newNote === '' ? this.state.notes : [...this.state.notes, newNote];
+
         UserDataClient.saveUserNotes(this.props.indicatorId, notes);
         this.setState({notes:notes, textareaValue:''});
     }
@@ -53,8 +55,8 @@ class IndicatorNotes extends React.Component {
                         </li>
                     ) : ''}
                 </ul>
-                <textarea value={this.state.textareaValue} className="form-control" id="notes" onChange={this.handleChange}/>
-                <button className="btn btn-default btn-sm" onClick={this.addNote}>Add note</button>
+                <div class="form-group"><textarea value={this.state.textareaValue} className="form-control" id="notes" onChange={this.handleChange}/></div>
+                <button type="submit" className="btn btn-default btn-sm" onClick={this.addNote}>Add note</button>
             </div>
         )
     };
