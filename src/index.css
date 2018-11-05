@@ -88,3 +88,7 @@ ol, ul {
 ul {
     list-style-type: none;
 }
+
+ul.list {
+    list-style-type: disc;
+}
