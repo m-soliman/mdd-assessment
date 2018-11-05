@@ -1,5 +1,6 @@
 import React from "react";
 import Level from "./Level";
+import IndicatorNotes from "./IndicatorNotes";
 
 class Indicator extends React.Component {
 
@@ -21,7 +22,8 @@ class Indicator extends React.Component {
 
     render() {
         return (
-                <ul>
+            <div>
+                <div className="col-md-8 indicator"> <ul>
                     <h3>{this.props.description}</h3>
                     {this.props.levels.map((level, i) =>
                         <Level
@@ -34,6 +36,9 @@ class Indicator extends React.Component {
                         />
                     )}
                 </ul>
+                </div>
+                <IndicatorNotes indicatorId={this.props.id}/>
+            </div>
         )
     };
 

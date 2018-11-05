@@ -64,14 +64,16 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Self-assessment tool <small>for Master Digital Design courses</small></h1>
-                <ul>
+                <div className="row">
+                    <div className="col-md-12"><button className="btn btn-default" onClick={this.deleteCookieData}>Clear all answers</button></div>
+                </div>
+                <ul className="nav nav-pills nav-justified">
                 {CompetenceDataClient.getListOfCompetences().map((description, id) =>
                     <li>
                         <a onClick={this.showCompetence.bind(this, id, true)}>{description}</a>
                     </li>
                 )}
                 </ul>
-                <button onClick={this.deleteCookieData}>Clear all answers</button>
 
                 <Competence saveIndicatorAnswer={this.saveIndicatorAnswer}
                             competence={competence.competenceDescription}
@@ -80,6 +82,8 @@ class App extends React.Component {
                             setIndicatorStep={this.setIndicatorStep}
                             levelSelections={selection}
                             showSummary={this.state.showSummary}/>
+
+
             </div>
         )
     }

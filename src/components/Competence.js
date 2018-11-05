@@ -4,7 +4,7 @@ import CompetenceStatusBar from "./CompetenceStatusBar";
 import CompetenceSummary from "./CompetenceSummary";
 
 class Competence extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.select = this.select.bind(this);
@@ -31,29 +31,36 @@ class Competence extends React.Component {
             <div>
                 <h2>Competence: {this.props.competence}</h2>
                 <i>Todo: When selecting an indicator, use colours to show levels weak to strong</i>
-                    <CompetenceStatusBar current={indicatorStep} max={this.props.indicators.length}/>
+                <CompetenceStatusBar current={indicatorStep} max={this.props.indicators.length}/>
 
-                    {this.props.showSummary ?
-                        this.renderSummary() :
-                        <div>Indicator: {indicatorStep + 1} of {this.props.indicators.length}
+                {this.props.showSummary ?
+                    this.renderSummary() :
+                    <div>Indicator: {indicatorStep + 1} of {this.props.indicators.length}
 
-                            <Indicator
-                                key={indicator.id}
-                                id={indicator.id}
-                                description={indicator.description}
-                                levels={indicator.levels}
-                                select={this.select}
-                                selectedLevel={selectedLevel}
-                            />
+                        <Indicator
+                            key={indicator.id}
+                            id={indicator.id}
+                            description={indicator.description}
+                            levels={indicator.levels}
+                            select={this.select}
+                            selectedLevel={selectedLevel}
+                        />
+                        <div className="col-md-12">
+                            <button className="btn btn-default" disabled={indicatorStep === 0}
+                                    onClick={this.props.setIndicatorStep.bind(this, indicatorStep - 1)}>Previous please
+                            </button>
 
-                            <button disabled={indicatorStep === 0} onClick={this.props.setIndicatorStep.bind(this, indicatorStep-1)}>Previous please</button>
-                            <button disabled={selectedLevel === null} onClick={this.props.setIndicatorStep.bind(this, indicatorStep+1)}>Next please</button>
-
+                            <button className="btn btn-default" disabled={selectedLevel === null}
+                                    onClick={this.props.setIndicatorStep.bind(this, indicatorStep + 1)}>Next please
+                            </button>
                         </div>
-                    }
+
+                    </div>
+                }
 
             </div>
         )
     }
 }
+
 export default Competence;
