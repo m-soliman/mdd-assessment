@@ -1,10 +1,5 @@
 body {
     font: "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-}
-
-ol, ul {
-    padding-left: 30px;
 }
 
 .board-row:after {
@@ -50,22 +45,22 @@ ol, ul {
 }
 
 .container {
-    width:70%;
+    width: 70%;
 }
 
 .indicator, .indicator ul {
-    padding-left:0;
+    padding-left: 0;
 }
 
 .note:hover {
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: line-through;
 }
 
 .list-group-item {
     border-left: 0;
     border-right: 0;
-    background-color:transparent;
+    background-color: transparent;
 }
 
 .list-group-item:first-child, .list-group-item:last-child {
@@ -78,7 +73,7 @@ ol, ul {
     background-color: #f3f3f3;
     font-size: 0.9em;
     border-radius: 5px;
-    padding:1em 1.5em 1em 1.5em;
+    padding: 1em 1.5em 1em 1.5em;
 }
 
 .notes textarea {
@@ -89,6 +84,46 @@ ul {
     list-style-type: none;
 }
 
-ul.list {
-    list-style-type: disc;
+ul.summary {
+    padding-left: 0;
+}
+
+ul.summary li {
+    margin: 1em 0 1em 0;
+}
+
+.summary a {
+    color: inherit;
+    cursor: pointer;
+}
+
+.hideMe {
+    opacity: 0;
+}
+
+.grade, .grade0, .grade1, .grade2, .grade3 {
+    padding: 0.5em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+
+.grade {
+    background: #e0e0e0;
+}
+
+.grade0:hover, input:checked + label.grade0, li.grade0 {
+    background: #f88f2a;
+}
+
+.grade1:hover, input:checked + label.grade1, li.grade1 {
+    background: #fde13c;
+}
+
+.grade2:hover, input:checked + label.grade2, li.grade2 {
+    background: #9bd42a;
+}
+
+.grade3:hover, input:checked + label.grade3, li.grade3 {
+    background: #32c64c;
 }
