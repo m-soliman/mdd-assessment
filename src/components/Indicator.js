@@ -24,7 +24,7 @@ class Indicator extends React.Component {
         return (
             <div>
                 <div className="col-md-8 indicator"> <ul>
-                    <h3>{this.props.description}</h3>
+                    <h3 className="indicatorHeader">{this.props.description}</h3>
                     {this.props.levels.map((level, i) =>
                         <Level
                             description={level.description}

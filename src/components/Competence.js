@@ -30,7 +30,6 @@ class Competence extends React.Component {
         return (
             <div>
                 <h2>{this.props.competence}</h2>
-                <i>Todo: When selecting an indicator, use colours to show levels weak to strong</i>
                 <CompetenceStatusBar current={indicatorStep} max={this.props.indicators.length}/>
 
                 {this.props.showSummary ?
