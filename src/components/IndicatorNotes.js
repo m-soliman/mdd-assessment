@@ -55,7 +55,7 @@ class IndicatorNotes extends React.Component {
                         </li>
                     ) : ''}
                 </ul>
-                <div class="form-group"><textarea value={this.state.textareaValue} className="form-control" id="notes" onChange={this.handleChange}/></div>
+                <div className="form-group"><textarea value={this.state.textareaValue} className="form-control" id="notes" onChange={this.handleChange}/></div>
                 <button type="submit" className="btn btn-default btn-sm" onClick={this.addNote}>Add note</button>
             </div>
         )

@@ -62,10 +62,10 @@ class App extends React.Component {
             : [];
 
         return (
-            <div class="main-content">
+            <div className="main-content">
 
-                <div class="sidebar">
-                    <div class="heading">
+                <div className="sidebar">
+                    <div className="heading">
                         <h1>Self-assessment tool</h1>
                         <h4>for Master Digital Design courses</h4>
                     </div>
@@ -83,7 +83,7 @@ class App extends React.Component {
                     </ul>
                 </div>
 
-                <div class="content">
+                <div className="content">
 
                     <Competence saveIndicatorAnswer={this.saveIndicatorAnswer}
                                 competence={competence.competenceDescription}
