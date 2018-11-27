@@ -39,12 +39,6 @@ class IndicatorNotes extends React.Component {
     render() {
         let notes = this.state.notes;
 
-        if (notes.length > 0) {
-            console.log('length > 0 ', notes.length);
-        } else {
-
-        }
-
         return (
             <div className="col-md-4 form-group notes">
                 <h3>Notes</h3>

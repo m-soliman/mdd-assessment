@@ -72,7 +72,7 @@ class App extends React.Component {
                     <div className="row">
                         <ul className="nav">
                             {CompetenceDataClient.getListOfCompetences().map((description, id) =>
-                                <li>
+                                <li key={id}>
                                     <a onClick={this.showCompetence.bind(this, id, true)}>{description}</a>
                                 </li>
                             )}
