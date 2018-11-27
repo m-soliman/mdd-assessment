@@ -11,17 +11,17 @@ class CompetenceSummary extends React.Component {
                 <ul className="summary">
                     {this.props.indicators.map((indicator, i) => {
 
-                            let className = "grade";
-                            let description = 'give answer';
+                            let className = "levelSummary grade";
+                            let description = '';
 
                             if (this.props.levelSelections !== null && this.props.levelSelections.hasOwnProperty(indicator.id)) {
-                                className = "grade" + indicator.levels[this.props.levelSelections[indicator.id]].grade;
+                                className = "levelSummary grade" + indicator.levels[this.props.levelSelections[indicator.id]].grade;
                                 description = indicator.levels[this.props.levelSelections[indicator.id]].description;
                             }
 
                             return <li className={className}>
                                 <h4><a onClick={this.props.showIndicator.bind(this, i)}>{indicator.description}</a></h4>
-                                {description}
+                                <div className="gradeDescription">{description}</div>
                             </li>
                         }
                     )}

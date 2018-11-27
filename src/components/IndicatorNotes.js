@@ -47,7 +47,7 @@ class IndicatorNotes extends React.Component {
 
         return (
             <div className="col-md-4 form-group notes">
-                <h4>Notes</h4>
+                <h3>Notes</h3>
                 <ul className="list-group">
                     {notes.length > 0 ? notes.map((note, i) =>
                         <li className="note list-group-item" key={i}>

@@ -45,15 +45,17 @@ class Competence extends React.Component {
                             selectedLevel={selectedLevel}
                         />
                         <div className="col-md-12">
-                            <button className="btn btn-default" disabled={indicatorStep === 0}
-                                    onClick={this.props.setIndicatorStep.bind(this, indicatorStep - 1)}>Previous please
-                            </button>
-
-                            <button className="btn btn-default" disabled={selectedLevel === null}
-                                    onClick={this.props.setIndicatorStep.bind(this, indicatorStep + 1)}>Next please
-                            </button>
+                            <div className="col-md-2">
+                                <button className="btn btn-default" disabled={indicatorStep === 0}
+                                        onClick={this.props.setIndicatorStep.bind(this, indicatorStep - 1)}>Previous please
+                                </button>
+                            </div>
+                            <div className="col-md-2 ">
+                                <button className="btn btn-default" disabled={selectedLevel === null}
+                                        onClick={this.props.setIndicatorStep.bind(this, indicatorStep + 1)}>Next please
+                                </button>
+                            </div>
                         </div>
-
                     </div>
                 }
 
