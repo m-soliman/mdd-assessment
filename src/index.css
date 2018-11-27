@@ -121,7 +121,7 @@ small, .font_small {font-size: 0.8em;}
     background: white;
     padding: 1rem;
     border-radius: 0.3rem;
-    box-shadow: 0px 2px 28px -2px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 20px -2px rgba(0,0,0,0.15);
     position: relative;
 }
 
@@ -162,6 +162,10 @@ small, .font_small {font-size: 0.8em;}
     background: -webkit-linear-gradient(top, rgba(119,205,103,1) 0%,rgba(109,199,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(119,205,103,1) 0%,rgba(109,199,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#77cd67', endColorstr='#6dc7e8',GradientType=0 ); /* IE6-9 */
+}
+
+input:checked + label {
+    box-shadow: 0px 2px 28px -2px rgba(0,0,0,0.5);
 }
 
 .radio {
@@ -222,19 +226,3 @@ ul.summary li {
 .grade {
     background: #e0e0e0;
 }
-
-/* .grade0:hover, input:checked + label.grade0, li.grade0 {
-    background: #f88f2a;
-}
-
-.grade1:hover, input:checked + label.grade1, li.grade1 {
-    background: #fde13c;
-}
-
-.grade2:hover, input:checked + label.grade2, li.grade2 {
-    background: #9bd42a;
-}
-
-.grade3:hover, input:checked + label.grade3, li.grade3 {
-    background: #32c64c;
-} */
