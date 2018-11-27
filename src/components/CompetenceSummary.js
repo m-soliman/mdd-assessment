@@ -6,11 +6,8 @@ class CompetenceSummary extends React.Component {
         return (
             <div>
                 <h2>{this.props.competenceDescription}</h2>
-                <i>Todo: This should be graphical :)</i>
-
                 <ul className="summary">
                     {this.props.indicators.map((indicator, i) => {
-
                             let className = "levelSummary grade";
                             let description = 'No answer given yet';
 
@@ -21,10 +18,14 @@ class CompetenceSummary extends React.Component {
 
                             return <li className={className}>
                                 <div className="levelSummaryContent">
-                                    <h4><a onClick={this.props.showIndicator.bind(this, i)}>{indicator.description}</a></h4>
+                                    <h4>{indicator.description}</h4>
                                     <div className="gradeDescription">{description}</div>
                                 </div>
-                                <div className="levelSummaryEdit"><button className="btn btn-default">Edit</button></div>
+                                <div className="levelSummaryEdit" onClick={this.props.showIndicator.bind(this, i)}>
+                                    <button className="btn btn-default">
+                                        <span className="glyphicon glyphicon-pencil" aria-hidden="true" />
+                                    </button>
+                                </div>
                             </li>
                         }
                     )}

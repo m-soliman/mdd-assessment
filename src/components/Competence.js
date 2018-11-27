@@ -35,26 +35,26 @@ class Competence extends React.Component {
                 {this.props.showSummary ?
                     this.renderSummary() :
                     <div>Indicator: {indicatorStep + 1} of {this.props.indicators.length}
+                        <div className="row">
+                            <Indicator
+                                key={indicator.id}
+                                id={indicator.id}
+                                description={indicator.description}
+                                levels={indicator.levels}
+                                select={this.select}
+                                selectedLevel={selectedLevel}
+                            />
+                        </div>
 
-                        <Indicator
-                            key={indicator.id}
-                            id={indicator.id}
-                            description={indicator.description}
-                            levels={indicator.levels}
-                            select={this.select}
-                            selectedLevel={selectedLevel}
-                        />
-                        <div className="col-md-12">
-                            <div className="col-md-2">
-                                <button className="btn btn-default" disabled={indicatorStep === 0}
-                                        onClick={this.props.setIndicatorStep.bind(this, indicatorStep - 1)}>Previous please
-                                </button>
-                            </div>
-                            <div className="col-md-2 ">
-                                <button className="btn btn-default" disabled={selectedLevel === null}
-                                        onClick={this.props.setIndicatorStep.bind(this, indicatorStep + 1)}>Next please
-                                </button>
-                            </div>
+                        <div className="row">
+                            <button className="btn btn-default navButton" disabled={indicatorStep === 0}
+                                    onClick={this.props.setIndicatorStep.bind(this, indicatorStep - 1)}>
+                                Previous please
+                            </button>
+                            <button className="btn btn-default navButton" disabled={selectedLevel === null}
+                                        onClick={this.props.setIndicatorStep.bind(this, indicatorStep + 1)}>
+                                Next please
+                            </button>
                         </div>
                     </div>
                 }

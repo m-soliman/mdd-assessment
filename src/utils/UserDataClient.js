@@ -20,7 +20,11 @@ class UserDataClient {
     }
 
     static saveUserAnswers(userAnswers, id) {
-        cookies.set(cookieNameAnswers, userAnswers);
+        cookies.set(
+            cookieNameAnswers,
+            userAnswers,
+            {path: '/', expires: new Date(2019, 12, 31, 23, 59, 59)}
+        );
     }
 
     static deleteUserAnswers(id) {
@@ -39,7 +43,11 @@ class UserDataClient {
     }
 
     static saveUserNotes(indicatorId, userNotes) {
-        cookies.set(this.getCookieNameForNotes(indicatorId), userNotes);
+        cookies.set(
+            this.getCookieNameForNotes(indicatorId),
+            userNotes,
+            {path: '/', expires: new Date(2019, 12, 31, 23, 59, 59)}
+        );
     }
 
     static getCookieNameForNotes(indicatorId) {
