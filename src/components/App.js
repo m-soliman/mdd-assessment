@@ -69,18 +69,19 @@ class App extends React.Component {
                         <h1>Self-assessment tool</h1>
                         <h4>for Master Digital Design courses</h4>
                     </div>
+                    <div className="row">
+                        <ul className="nav">
+                            {CompetenceDataClient.getListOfCompetences().map((description, id) =>
+                                <li>
+                                    <a onClick={this.showCompetence.bind(this, id, true)}>{description}</a>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
 
                     <div className="row">
                         <div className="col-md-12"><button className="btn btn-default" onClick={this.deleteCookieData}>Clear all answers</button></div>
                     </div>
-
-                    <ul className="nav">
-                        {CompetenceDataClient.getListOfCompetences().map((description, id) =>
-                            <li>
-                                <a onClick={this.showCompetence.bind(this, id, true)}>{description}</a>
-                            </li>
-                        )}
-                    </ul>
                 </div>
 
                 <div className="content">
