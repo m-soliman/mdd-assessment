@@ -32,6 +32,7 @@ class App extends React.Component {
             showSummary = false;
         }
 
+        window.scrollTo(0, 0);
         this.setState({competenceId: id, showSummary: showSummary, indicatorStep:0});
     }
 
@@ -39,6 +40,8 @@ class App extends React.Component {
         if (indicatorStep >= 0) {
             // fallback, in case user tries to access non existing indicator step, show summary view
             let showSummary = indicatorStep >= CompetenceDataClient.getIndicatorsCountForCompetenceWithId(this.state.competenceId);
+
+            window.scrollTo(0, 0);
             this.setState({indicatorStep: indicatorStep, showSummary:showSummary});
         }
     }
