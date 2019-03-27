@@ -1,8 +1,9 @@
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
-const cookieNameAnswers = 'mdd-assessment-answers';
-const cookieNameNotes = 'mdd-assessment-notes';
+const cookieNameAnswers  = 'mdd-assessment-answers';
+const cookieNameNotes    = 'mdd-assessment-notes';
+const cookieNameSettings = 'mdd-assessment-settings';
 
 /**
  * Client to handle access to user data.
@@ -53,6 +54,30 @@ class UserDataClient {
     static getCookieNameForNotes(indicatorId) {
         return cookieNameNotes + '_' + indicatorId.toString();
     }
+
+    // ------- USER SETTINGS MANAGEMENT ------- //
+    static getUserSettings() {
+        let settings = cookies.get(cookieNameSettings);
+        if (settings !== undefined && settings !== null) {
+            return settings;
+        }
+        return {};
+    }
+
+    static saveUserSettingsFinalAssessment(finalAssessment) {
+        if(typeof finalAssessment !== "boolean") {
+            finalAssessment = false;
+        }
+
+        let settings = this.getUserSettings();
+        settings.finalAssessment = finalAssessment;
+        cookies.set(
+            cookieNameSettings,
+            settings,
+            {path: '/', expires: new Date(2019, 12, 31, 23, 59, 59)}
+        );
+    }
+
 }
 
 export default UserDataClient;

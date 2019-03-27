@@ -2,23 +2,29 @@ import React from "react";
 import Competence from "./Competence.js";
 import CompetenceDataClient from "./../utils/CompetenceDataClient";
 import UserDataClient from "../utils/UserDataClient";
+import Switch from "./Switch/Switch";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
-        let userAnswers = UserDataClient.getUserAnswers();
+        let userAnswers     = UserDataClient.getUserAnswers();
+        let settings        = UserDataClient.getUserSettings();
+        let finalAssessment = settings.finalAssessment !== undefined ? settings.finalAssessment : false;
+        let competenceId    = finalAssessment ? 5 : 0;
 
         this.state = {
-            competenceId: 0,
+            finalAssessment: finalAssessment,
+            competenceId: competenceId,
             indicatorStep: 0,
-            showSummary: false,
+            showSummary: true,
             userAnswers: userAnswers
         };
-        this.showCompetence         = this.showCompetence.bind(this);
-        this.saveIndicatorAnswer    = this.saveIndicatorAnswer.bind(this);
-        this.setIndicatorStep       = this.setIndicatorStep.bind(this);
-        this.deleteCookieData       = this.deleteCookieData.bind(this);
+        this.showCompetence           = this.showCompetence.bind(this);
+        this.saveIndicatorAnswer      = this.saveIndicatorAnswer.bind(this);
+        this.setIndicatorStep         = this.setIndicatorStep.bind(this);
+        this.deleteCookieData         = this.deleteCookieData.bind(this);
+        this.setFinalAssessmentSwitch = this.setFinalAssessmentSwitch.bind(this);
     }
 
     showCompetence(id, showSummary) {
@@ -52,6 +58,20 @@ class App extends React.Component {
     deleteCookieData() {
         UserDataClient.deleteUserAnswers();
         this.setState({userAnswers: {}});
+        App.reload();
+    }
+
+    setFinalAssessmentSwitch(event) {
+        const value = event.target.type === 'checkbox' ? event.target.checked : false;
+        UserDataClient.saveUserSettingsFinalAssessment(value);
+        this.setState({
+            finalAssessment: value
+        });
+        App.reload();
+    }
+
+    static reload() {
+        window.scrollTo(0, 0);
         window.location.reload(true);
     }
 
@@ -63,15 +83,18 @@ class App extends React.Component {
 
         return (
             <div className="main-content">
-
                 <div className="sidebar">
                     <div className="heading">
                         <h1>Self-assessment tool</h1>
                         <h4>for Master Digital Design courses</h4>
                     </div>
+                    <Switch description="Final assessment"
+                            setFinalAssessmentSwitch={this.setFinalAssessmentSwitch}
+                            checked={this.state.finalAssessment}
+                    />
                     <div className="row">
                         <ul className="nav">
-                            {CompetenceDataClient.getListOfCompetences().map((description, id) =>
+                            {CompetenceDataClient.getListOfCompetences(this.state.finalAssessment).map((description, id) =>
                                 <li key={id}>
                                     <a onClick={this.showCompetence.bind(this, id, true)}>{description}</a>
                                 </li>
@@ -85,7 +108,6 @@ class App extends React.Component {
                 </div>
 
                 <div className="content">
-
                     <Competence saveIndicatorAnswer={this.saveIndicatorAnswer}
                                 competence={competence.competenceDescription}
                                 indicators={competence.indicators}
@@ -94,7 +116,6 @@ class App extends React.Component {
                                 levelSelections={selection}
                                 showSummary={this.state.showSummary}
                     />
-
                 </div>
 
             </div>

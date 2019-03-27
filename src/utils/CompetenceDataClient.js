@@ -34,10 +34,10 @@ class CompetenceDataClient {
      * ['id' => 'description']
      * @returns {Array}
      */
-    static getListOfCompetences() {
+    static getListOfCompetences(finalAssessment = false) {
         let list = [];
         for (let key in competenceData) {
-            if (competenceData.hasOwnProperty(key)) {
+            if (competenceData.hasOwnProperty(key) && competenceData[key].finalAssessment === finalAssessment) {
                 list[competenceData[key].id] = competenceData[key].competenceDescription;
                 this.competencesById[competenceData[key].id] = competenceData[key];
             }
